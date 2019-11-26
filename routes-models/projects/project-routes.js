@@ -9,4 +9,13 @@ router.get('/', (req, res)=>{
     .catch(err => res.send(err))
 })
 
+router.post('/', (req, res) => {
+    const newPro = req.body
+    ProModel.add(newPro)
+    .then(project =>{
+        res.status(201).json(project)
+    })
+    .catch(err => res.send(err))
+})
+
 module.exports = router
