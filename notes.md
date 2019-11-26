@@ -11,6 +11,7 @@ touch .gitignore
 
 npm install express
 npm i helmet // protects headers
+npm i cors
 npm install knex //install globally to use cli command line interface
 npm install sqlite3 
 
@@ -156,7 +157,7 @@ exports.seed = function(knex) {
     });
 };
 --------------------------------------------------------------------------
-crud
+routes / models
 
 make a folder
 add files:
