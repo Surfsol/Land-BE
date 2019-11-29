@@ -27,5 +27,15 @@ router.get('/project/:id', (req, res)=>{
     .catch(err => res.send(err))
 })
 
+router.post('/', (req, res)=> {
+    const newP = req.body
+    tpModel.add(newP)
+    .then(added =>{
+        res.json(added)
+    })
+    .catch(err => res.send(err))
+})
+
+
 
 module.exports= router
