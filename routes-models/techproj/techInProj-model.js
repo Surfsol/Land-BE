@@ -1,7 +1,7 @@
 const db = require("../../data/db-config");
 
 module.exports = {
-  //add,
+  add,
   find,
   findByTechId,
   findByTechName,
@@ -47,6 +47,19 @@ function findByProjectId(id) {
     .select("p.id", "p.project", "p.description", "t.tech", "t.id")
 }
 
+function add(newP){
+  return db('techInProject')
+    .insert(newP)
+    //.returning('id') //returning used for postgres
+    .then(ids => {
+        const [id] = ids
+        return db('techInProject')
+        .where({id})
+        .first()
+  })
+
+}
+
 function addByTId(id) {
   return db("techInProject as s")
     .join("tech as t", "s.tech_id", "t.id")
@@ -56,6 +69,7 @@ function addByTId(id) {
     .then(ids => {
       return findById(ids[0]);
     });
+
 }
 
 // function add(pro){
