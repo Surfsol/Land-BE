@@ -119,6 +119,7 @@ workflow
         tech_id foreign key
         
 
+knex cheatsheet: https://devhints.io/knex
 
 help to label seeds
 http://knexjs.org/#Schema-defaultTo
@@ -133,6 +134,9 @@ Changes and Rollbacks
 If later down the road, we realize you need to update your schema, you shouldn’t edit the migration file. Instead, you will want to create a new migration with the command:
 
 knex migrate:make projects-schema-update
+
+change migration - http://perkframework.com/v1/guides/database-migrations-knex.html
+create new knex migrations file, only add column
 -----------------------------------------------------------------------
 open in sqlite3
 

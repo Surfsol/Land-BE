@@ -24,9 +24,9 @@ function findAll() {
     .select('id', 'tech')
 }
 
-function findBy(tec){
+function findBy(id){
     return db('tech')
-    .where(tec)
+    .where(id)
 }
 
 function update(changes, id){

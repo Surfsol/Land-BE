@@ -44,7 +44,7 @@ function findByProjectId(id) {
     .join("tech as t", "s.tech_id", "t.id")
     .join("project as p", "s.project_id", "p.id")
     .where({ project_id : id }) //tech_id from techInProject db
-    .select("p.id", "p.project", "p.description", "t.tech", "t.id")
+    .select("p.id", "p.project","p.date", "p.description", "t.tech", "t.id")
 }
 
 function add(newP){
