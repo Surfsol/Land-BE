@@ -136,7 +136,12 @@ If later down the road, we realize you need to update your schema, you shouldnâ€
 knex migrate:make projects-schema-update
 
 change migration - http://perkframework.com/v1/guides/database-migrations-knex.html
-create new knex migrations file, only add column
+
+if need to add a new column:
+create new migration file.
+only add additional column to table
+
+
 -----------------------------------------------------------------------
 open in sqlite3
 
