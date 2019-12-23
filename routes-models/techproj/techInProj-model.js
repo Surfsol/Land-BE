@@ -25,7 +25,7 @@ function findByTechId(id) {
     .join("tech as t", "s.tech_id", "t.id")
     .join("project as p", "s.project_id", "p.id")
     .where({ tech_id : id }) //tech_id from techInProject db
-    .select("p.id", "p.project", "p.description", "t.tech", "t.id")
+    .select("p.id", "p.project", "p.description", "t.tech", "p.github")
 }
 
 //tech_tech not in techInProject 
