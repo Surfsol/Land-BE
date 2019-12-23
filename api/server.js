@@ -17,6 +17,6 @@ server.use(cors())
 server.use('/projects', proRouter)
 server.use('/tech', tecRouter)
 server.use('/techInProj', techProjRouter)
-server.get('/', (req, res) => { res.status(200).json({hello: 'From Server.js'})})
+server.get('/', (req, res) => { res.status(200).json({hello: process.env.MOTD})})
 
 module.exports = server;
