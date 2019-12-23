@@ -9,6 +9,15 @@ router.get('/', (req, res)=>{
     .catch(err => res.send(err))
 })
 
+router.get('/:id', (req, res)=> {
+    const getTech = req.params.id
+    TechModel.findBy(getTech)
+    .then(all => {
+        res.json(all)
+    })
+})
+
+
 router.post('/', (req, res) => {
     const newTech = req.body
     TechModel.add(newTech)
