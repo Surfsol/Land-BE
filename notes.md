@@ -440,3 +440,9 @@ add to package.json
 "jest": {"testEnvironment": "node"}
 
 write code to test our code
+
+---------------------------------------------
+heroku deployment 
+package.json
+'scripts'
+"start":"node index.js"
