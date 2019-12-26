@@ -517,6 +517,13 @@ production: {
     }
   }
 
+5. data/ db_Config
+const dbEnv = process.env.DB_ENV || 'development'
+
+module.exports = knex(config[dbEnv])
+
+6. Heroku - add - Config Vars
+DB_ENV production
 
 
 exports.seed = function(knex) {
