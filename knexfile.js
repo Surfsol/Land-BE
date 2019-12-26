@@ -62,7 +62,10 @@ module.exports = {
       max: 10
     },
     migrations: {
-      tableName: "./data/seeds"
+      directory: "./data/migrations" //to put migrations under folder data
+    },
+    seeds: {
+      directory: "./data/seeds"
     }
   }
 };

@@ -525,6 +525,9 @@ module.exports = knex(config[dbEnv])
 6. Heroku - add - Config Vars
 DB_ENV production
 
+7. add migrations and seeds
+npx heroku run knex migrate:latest -a landingbe
+
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
