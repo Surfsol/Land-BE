@@ -11,7 +11,7 @@ function findAll(){
 
 function add(proj){
     return db('pt')
-    .insert(proj)
+    .insert(proj, 'id')
     .then(ids => {
         const [id] = ids
         return db('pt')

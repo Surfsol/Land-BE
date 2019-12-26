@@ -49,7 +49,7 @@ function findByProjectId(id) {
 
 function add(newP){
   return db('techInProject')
-    .insert(newP)
+    .insert(newP, 'id')
     //.returning('id') //returning used for postgres
     .then(ids => {
         const [id] = ids

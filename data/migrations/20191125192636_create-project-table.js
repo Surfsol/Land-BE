@@ -11,9 +11,11 @@ exports.up = function(knex) {
       .notNullable()
       .defaultTo(knex.fn.now());
 
-    project.text("github");
+    
 
     project.text("description");
+
+    project.text("github");
   });
 };
 

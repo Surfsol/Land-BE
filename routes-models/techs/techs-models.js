@@ -9,7 +9,7 @@ module.exports ={
 
 function add(tec){
     return db('tech')
-    .insert(tec)
+    .insert(tec, 'id')
     //.returning('id') //returning used for postgres
     .then(ids => {
         const [id] = ids

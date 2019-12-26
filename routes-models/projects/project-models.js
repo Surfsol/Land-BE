@@ -10,7 +10,7 @@ module.exports ={
 
 function add(pro){
     return db('project')
-    .insert(pro)
+    .insert(pro, 'id') //'id' must use for heroku
     //.returning('id') //returning used for postgres
     .then(ids => {
         const [id] = ids
