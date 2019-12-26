@@ -141,7 +141,42 @@ if need to add a new column:
 create new migration file.
 only add additional column to table
 
+postgres 
 
+ staging: {
+    client: "pg",
+    connection: {
+      host:'localhost',
+      database: "landBE",
+      user: "postgres",
+      password: "5%G!fT",
+      host:'localhost',
+      port:5432,
+    },
+    pool: {  //# of connections between api and db server.  Db manager will decide
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      directory: "./data/migrations" //to put migrations under folder data
+    },
+    seeds: {
+      directory: "./data/seeds"
+    }
+  },
+
+run migrations in an environment aside from development:
+knex migrate:latest --env production
+
+Postgres from terminal:
+psql -U postgres postgres
+.......(user)..(database)
+
+\?  list of commands
+\q quit
+\d relations
+
+select * from tech;  (must end with ;)
 -----------------------------------------------------------------------
 open in sqlite3
 
@@ -452,6 +487,47 @@ write code to test our code
 
 ---------------------------------------------
 heroku deployment 
-package.json
+
+1. index.js  - need dynamic port 
+const PORT = process.env.PORT
+
+2. package.json
 'scripts'
 "start":"node index.js"
+
+3. model
+ .insert(proj, 'id')//include id or * to return id
+
+ 4. add on to use Postgres
+ Resources/ add-ons / Postgres - HobbyDev-Free - provision
+
+ in settings/ config vars 
+  will appear DATABASE_URL ->  postgres
+
+modify knexfile:
+production: {
+    client: "pg",
+    connection: process.env.DATABASE_URL,
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: "./data/seeds"
+    }
+  }
+
+
+
+exports.seed = function(knex) {
+  // Deletes ALL existing entries
+  return knex('techInProject').del()
+    .then(function () {
+      // Inserts seed entries
+      return knex('techInProject').insert([
+        {project_id: 1, tech_id: 1},
+        {project_id: 2, tech_id: 2},
+        {project_id: 3, tech_id: 3}
+      ]);
+    });
+};
