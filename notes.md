@@ -528,6 +528,10 @@ DB_ENV production
 7. add migrations and seeds
 npx heroku run knex migrate:latest -a landingbe
 
+npx heroku run knex migrate:up 20191225204850_staging.js -a landingbe
+
+npx heroku run knex seed:run -a landingbe
+
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
