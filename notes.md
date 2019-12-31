@@ -231,6 +231,11 @@ npm i bcryptjs jsonwebtoken
 
 const express = require('express')
 
+------------------------------------------------------------
+twilio
+can not do a .post to twilio
+need TWILIO ID AND AUTH in environmental variables
+
 const server = express()
 
 //bring in routers
