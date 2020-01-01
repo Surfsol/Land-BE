@@ -36,7 +36,10 @@ exports.seed = function(knex) {
         {project_id: 15, tech_name: "Sql"},
         {project_id: 16, tech_name: "Testing"},
         {project_id: 17, tech_name: "Testing"},
+        {project_id: 1, tech_name: "Testing"},
         {project_id: 11, tech_name: "AWS"},
+        {project_id: 2, tech_name: "Javascript"},
+        {project_id: 8, tech_name: "Javascript"},
       ]);
     });
 };
