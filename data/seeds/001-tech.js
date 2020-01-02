@@ -24,7 +24,7 @@ exports.seed = function(knex) {
         {tech: 'Heroku'},
         {tech: 'Node.js'},
         {tech: 'Sprint'},
-        {tech: 'PostgreSQl'},
+        {tech: 'PostgreSQL'},
         {tech: 'Sqlite3'},
         {tech: 'HTML'},
         {tech: 'SASS'},
