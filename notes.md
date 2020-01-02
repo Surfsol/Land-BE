@@ -550,3 +550,9 @@ exports.seed = function(knex) {
       ]);
     });
 };
+
+
+insomnia
+https://landingbe.herokuapp.com/mailer
+
+localhost:4001/techsProject/React
