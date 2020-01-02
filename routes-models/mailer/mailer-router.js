@@ -15,8 +15,10 @@ router.post("/", (req, res) => {
         `;
   //https://ethereal.email
   const transporter = nodemailer.createTransport({
-    host: process.env.HOST,
-    port: 587,
+      //https://nodemailer.com/smtp/well-known/
+    // host: process.env.HOST,
+    // port: 587,
+    service:process.env.HOST,
     auth: {
       user: process.env.EMAILFROM,
       pass: process.env.PASSWORDFROM
