@@ -556,3 +556,7 @@ insomnia
 https://landingbe.herokuapp.com/mailer
 
 localhost:4001/techsProject/React
+
+
+aleen14@ethereal.email
+Ufer5wHYptZAQb3MH7
