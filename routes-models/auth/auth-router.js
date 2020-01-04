@@ -11,6 +11,7 @@ router.post('/register', (req, res) => {
     Users.add(creds)
     .then(user => {
         //to login after registration
+        //from server const session, now we can store session data
         req.session.username = user.username
         res.status(201).json(user)
     })
@@ -27,7 +28,7 @@ router.post('/login', (req, res)=> {
         .then(user => {
             console.log(user)
             if(user && bcrypt.compareSync(password, user.password)){
-                //add cookie to existing object, cannot do in insomina
+                //add cookie to existing object
                 req.session.username = user.username
                 res.status(200).json({message: `Welcome ${username}`})
             } else {

@@ -2,6 +2,7 @@ const express = require("express");
 const server = express(); //create instance of express server
 const CORS = require("cors");
 const helmet = require("helmet");
+const session = require("express-session")
 
 const proRouter = require("../routes-models/projects/project-routes");
 const tecRouter = require("../routes-models/techs/techs-router");
@@ -13,9 +14,24 @@ const mailerRouter = require("../routes-models/mailer/mailer-router")
 const authRouter = require("../routes-models/auth/auth-router")
 
 
+//cookie details
+const sessionConfig = {
+    name:"jameson",
+    secret: process.env.SESSION,
+    cookie: {
+        maxAge: 1000 * 60 * 60, // 1 hour storage
+        //prevent cookie being sent over http (unencrypted)
+        secure: false, //false in development, true in production
+        httpOnly: true, //cookie cannot be access from JS, always set true
+    },
+    resave: false, //recreate session, even if has not changed. Reduce chatter in session storage
+    saveUninitialized: false //GDPR laws, setting cookies automatically. Should change dynamically if user accepts cookies
+}
+
 server.use(express.json()); // allows express to read .json from body of request
 server.use(CORS());
 server.use(helmet());
+server.use(session(sessionConfig))
 
 server.use("/projects", proRouter);
 server.use("/tech", tecRouter);
