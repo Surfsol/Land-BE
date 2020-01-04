@@ -565,9 +565,13 @@ Ufer5wHYptZAQb3MH7
 
 
 login - authorization:
-Create a new table
+1. Create a new table
 
 knex migrate:make create-users-table
 
  knex migrate:up 20200104074335_create-users-table.js
+
+ 2. Users router and model
+ 
+
 

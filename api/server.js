@@ -10,6 +10,8 @@ const ptRouter = require("../routes-models/pt/pt-router");
 const techsProjectRouter = require("../routes-models/techsProject/techsProject-router");
 const twilioRouter = require("../routes-models/Twilio/twilio-router");
 const mailerRouter = require("../routes-models/mailer/mailer-router")
+const authRouter = require("../routes-models/auth/auth-router")
+
 
 server.use(express.json()); // allows express to read .json from body of request
 server.use(CORS());
@@ -22,6 +24,8 @@ server.use("/pt", ptRouter);
 server.use("/techsProject", techsProjectRouter);
 server.use("/twilio", twilioRouter);
 server.use("/mailer", mailerRouter)
+server.use("/auth", authRouter)
+
 
 server.get("/", (req, res) => {
   res.status(200).json({ hello: process.env.MOTD });
