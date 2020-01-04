@@ -2,10 +2,11 @@ const db = require('../../data/db-config')
 
 module.exports = {
     add,
-    findById
+    findById,
+    findBy,
 }
 
-
+//register
 function findById(id){
     return db('users')
     .select('id', 'username')
@@ -13,6 +14,7 @@ function findById(id){
     .first();//an array will be returned, need to select first item
 }
 
+//register
 function add(creds){
     return db('users')
     .insert(creds, 'id') //'id' must use for heroku
@@ -20,4 +22,10 @@ function add(creds){
         const[id]= ids;
         return findById(id)
     })
+}
+
+//login
+function findBy(username){
+    return db('users')
+    .where(username)
 }

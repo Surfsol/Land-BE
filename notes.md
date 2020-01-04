@@ -571,7 +571,9 @@ knex migrate:make create-users-table
 
  knex migrate:up 20200104074335_create-users-table.js
 
- 2. Users router and model
- 
+ 2. Users model
+
+3. Create auth/auth-router.js
+- to register user
 
 
