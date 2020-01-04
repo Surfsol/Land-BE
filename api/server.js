@@ -25,7 +25,7 @@ const sessionConfig = {
         httpOnly: true, //cookie cannot be access from JS, always set true
     },
     resave: false, //recreate session, even if has not changed. Reduce chatter in session storage
-    saveUninitialized: false //GDPR laws, setting cookies automatically. Should change dynamically if user accepts cookies
+    saveUninitialized: true //GDPR laws, setting cookies automatically. Should change dynamically if user accepts cookies
 }
 
 server.use(express.json()); // allows express to read .json from body of request
