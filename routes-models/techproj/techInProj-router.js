@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const tpModel = require('./techInProj-model')
 
+
 router.get('/', (req, res)=>{
     tpModel.find()
     .then(techs => {

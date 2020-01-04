@@ -557,6 +557,39 @@ https://landingbe.herokuapp.com/mailer
 
 localhost:4001/techsProject/React
 
-
+nodemailer:
+temporary username and password that is set
+up to act as a sending account but does not actually send emails.
 aleen14@ethereal.email
 Ufer5wHYptZAQb3MH7
+
+
+login - authorization:
+1. Create a new table
+
+knex migrate:make create-users-table
+
+ knex migrate:up 20200104074335_create-users-table.js
+
+ 2. Users model
+
+3. Create auth/auth-router.js
+- to register user
+
+5. npm i express-session - middleware
+const session = require("express-session")
+
+6. Create cookie
+const sessionConfig = {
+    name:"jameson",
+    secret: process.env.SESSION,
+    cookie: {
+        maxAge: 1000 * 60 * 60, // 1 hour storage
+        //prevent cookie being sent over http (unencrypted)
+        secure: false, //false in development, true in production
+        httpOnly: true, //cookie cannot be access from JS, always set true
+    },
+    resave: false, //recreate session, even if has not changed. Reduce chatter in session storage
+    saveUninitialized: false //GDPR laws, setting cookies automatically. Should change dynamically if user accepts cookies
+}
+
