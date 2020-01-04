@@ -557,6 +557,17 @@ https://landingbe.herokuapp.com/mailer
 
 localhost:4001/techsProject/React
 
-
+nodemailer:
+temporary username and password that is set
+up to act as a sending account but does not actually send emails.
 aleen14@ethereal.email
 Ufer5wHYptZAQb3MH7
+
+
+login - authorization:
+Create a new table
+
+knex migrate:make create-users-table
+
+ knex migrate:up 20200104074335_create-users-table.js
+
