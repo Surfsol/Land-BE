@@ -1,6 +1,8 @@
 const router = require('express').Router()
 const ProModel = require('./project-models')
 
+const restricted = require('../auth/middleware')
+
 router.get('/', (req, res)=>{
     ProModel.findAll()
     .then(projects => {
@@ -9,7 +11,7 @@ router.get('/', (req, res)=>{
     .catch(err => res.send(err))
 })
 
-router.post('/', (req, res) => {
+router.post('/', restricted, (req, res) => {
     const newPro = req.body
     ProModel.add(newPro)
     .then(project =>{

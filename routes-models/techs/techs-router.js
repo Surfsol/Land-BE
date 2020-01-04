@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const TechModel = require('./techs-models')
+const restricted = require('../auth/middleware')
 
 router.get('/', (req, res)=>{
     TechModel.findAll()
@@ -18,7 +19,7 @@ router.get('/:id', (req, res)=> {
 })
 
 
-router.post('/', (req, res) => {
+router.post('/', restricted, (req, res) => {
     const newTech = req.body
     TechModel.add(newTech)
     .then(tec =>{
