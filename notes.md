@@ -535,6 +535,8 @@ npx heroku run knex migrate:latest -a landingbe
 
 npx heroku run knex migrate:up 20191225204850_staging.js -a landingbe
 
+npx heroku run knex migrate:up 20200104074335_create-users-table.js -a landingbe
+
 npx heroku run knex seed:run -a landingbe
 
 
@@ -593,3 +595,4 @@ const sessionConfig = {
     saveUninitialized: false //GDPR laws, setting cookies automatically. Should change dynamically if user accepts cookies
 }
 
+7. add restricted middleware to be used on restricted routes
