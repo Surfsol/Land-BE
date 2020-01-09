@@ -28,11 +28,7 @@ const sessionConfig = {
 }
 
 server.use(express.json()); // allows express to read .json from body of request
-//server.use(CORS());
-server.use(CORS({
-  credentials: true,
-  origin: "http://localhost:3000"
-}));
+server.use(CORS());
 server.use(helmet());
 server.use(session(sessionConfig))
 server.use("/projects", proRouter);
