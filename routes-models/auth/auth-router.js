@@ -21,7 +21,6 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res)=> {
     const {username, password} = req.body
-
     
     Users.findBy({username})
         .first()
@@ -30,7 +29,8 @@ router.post('/login', (req, res)=> {
             if(user && bcrypt.compareSync(password, user.password)){
                 //add cookie to existing object
                 req.session.username = user.username
-                res.status(200).json({message: `Welcome ${username}`})
+                res.status(200).json({
+                    message: `Welcome ${username}`})
             } else {
                 res.status(401).json({message: "Sorry Invalid Credentials"})
             }

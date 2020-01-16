@@ -2,7 +2,7 @@ const express = require("express");
 const server = express(); //create instance of express server
 const CORS = require("cors");
 const helmet = require("helmet");
-const session = require("express-session")
+const session = require("express-session") //reads and writes cookies in req, res,  do not use with a cookie-parser
 
 const proRouter = require("../routes-models/projects/project-routes");
 const tecRouter = require("../routes-models/techs/techs-router");
