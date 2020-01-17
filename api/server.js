@@ -11,7 +11,7 @@ const techsProjectRouter = require("../routes-models/techsProject/techsProject-r
 const twilioRouter = require("../routes-models/Twilio/twilio-router");
 const mailerRouter = require("../routes-models/mailer/mailer-router")
 const authRouter = require("../routes-models/auth/auth-router")
-
+const commentRouter = require('../routes-models/comments/comments-router')
 
 //cookie details
 const sessionConfig = {
@@ -38,6 +38,7 @@ server.use("/techsProject", techsProjectRouter);
 server.use("/twilio", twilioRouter);
 server.use("/mailer", mailerRouter)
 server.use("/auth", authRouter)
+server.use("/comments", commentRouter)
 
 
 server.get("/", (req, res) => {
