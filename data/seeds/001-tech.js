@@ -10,10 +10,10 @@ exports.seed = function(knex) {
         {tech: 'Responsive'},
         {tech: 'Backend'},
         {tech: 'Database'},
-        {tech: 'React Hooks'},
-        {tech: 'React Classes'},
-        {tech: 'Login Sessions'},
-        {tech: 'Login Cookies'},
+        {tech: 'ReactHooks'},
+        {tech: 'ReactClasses'},
+        {tech: 'LoginSessions'},
+        {tech: 'LoginCookies'},
         {tech: 'Register'},
         {tech: 'Forms'},
         {tech: 'Material UI'},
@@ -34,7 +34,8 @@ exports.seed = function(knex) {
         {tech: 'Django'},
         {tech: 'Sql'},
         {tech: 'Testing'},
-        {tech: 'AWS'}
+        {tech: 'AWS'},
+        {tech: 'LocalStorage'}
       ]);
     });
 };
