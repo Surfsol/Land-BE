@@ -2,7 +2,8 @@ const db = require('../../data/db-config')
 
 module.exports = {
     add,
-    findAll
+    findAll,
+    findByProject
 }
 
 
@@ -15,6 +16,13 @@ function add(comment){
         .where({id})
         .first()
     })
+}
+
+function findByProject(project_id){
+    return db('comments')
+    .where({project_id})
+    .first()
+    //.select('comment', 'tech_one', 'tech_two')
 }
 
 function findAll(){
