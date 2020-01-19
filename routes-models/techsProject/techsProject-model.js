@@ -11,14 +11,14 @@ function findByTech(tech) {
     .join("tech as t", "s.tech_name", "t.tech")
     .join("project as p", "s.project_id", "p.id")
     .where({ tech_name: tech })
-    .select("t.tech", "p.project", "p.description", "p.github");
+    .select("t.tech", "p.id", "p.project", "p.description", "p.github");
 }
 
 function findAll() {
   return db("techsProject as s")
     .join("tech as t", "s.tech_name", "t.tech")
     .join("project as p", "s.project_id", "p.id")
-    .select("t.tech", "p.project", "p.description", "p.github");
+    .select("t.tech", 'p.id', "p.project", "p.description", "p.github");
 }
 
 function add(newAdd) {
