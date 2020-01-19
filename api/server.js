@@ -2,7 +2,7 @@ const express = require("express");
 const server = express(); //create instance of express server
 const CORS = require("cors");
 const helmet = require("helmet");
-const session = require("express-session")
+const session = require("express-session") //reads and writes cookies in req, res,  do not use with a cookie-parser
 
 const proRouter = require("../routes-models/projects/project-routes");
 const tecRouter = require("../routes-models/techs/techs-router");
@@ -11,7 +11,7 @@ const techsProjectRouter = require("../routes-models/techsProject/techsProject-r
 const twilioRouter = require("../routes-models/Twilio/twilio-router");
 const mailerRouter = require("../routes-models/mailer/mailer-router")
 const authRouter = require("../routes-models/auth/auth-router")
-
+const commentRouter = require('../routes-models/comments/comments-router')
 
 //cookie details
 const sessionConfig = {
@@ -38,6 +38,7 @@ server.use("/techsProject", techsProjectRouter);
 server.use("/twilio", twilioRouter);
 server.use("/mailer", mailerRouter)
 server.use("/auth", authRouter)
+server.use("/comments", commentRouter)
 
 
 server.get("/", (req, res) => {

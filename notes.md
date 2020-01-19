@@ -187,6 +187,9 @@ knex seed:make 001-recipe
 
 knex seed:run
 
+knex seed:run --specific=005-comments.js
+
+
 const bcrypt = require('bcryptjs')
 exports.seed = function(knex) {
   // Deletes ALL existing entries
