@@ -21,8 +21,6 @@ function add(comment){
 function findByProject(project_id){
     return db('comments')
     .where({project_id})
-    .first()
-    //.select('comment', 'tech_one', 'tech_two')
 }
 
 function findAll(){

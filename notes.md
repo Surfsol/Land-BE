@@ -187,7 +187,9 @@ knex seed:make 001-recipe
 
 knex seed:run
 
+knex seed:run --specific=001-tech.js
 knex seed:run --specific=005-comments.js
+
 
 
 const bcrypt = require('bcryptjs')
@@ -539,8 +541,11 @@ npx heroku run knex migrate:latest -a landingbe
 npx heroku run knex migrate:up 20191225204850_staging.js -a landingbe
 
 npx heroku run knex migrate:up 20200104074335_create-users-table.js -a landingbe
+npx heroku run knex migrate:up 20200116090608_comments-table.js -a landingbe
 
 npx heroku run knex seed:run -a landingbe
+npx heroku run knex seed:run --specific=001-tech.js -a landingbe
+npx heroku run knex seed:run --specific=005-comments.js -a landingbe
 
 
 exports.seed = function(knex) {
